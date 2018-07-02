@@ -37,7 +37,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             if(loginUser == null){
                 // 无session则是未登录状态
                 System.out.println(">>>未登录,请重新登录<<<");
-                response.sendRedirect(request.getContextPath()+"/home");
+                response.sendRedirect(request.getContextPath()+"/login");
                 return false;
             }
         }
