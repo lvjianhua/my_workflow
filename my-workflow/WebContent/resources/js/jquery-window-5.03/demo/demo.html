@@ -1,0 +1,1385 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+	<head>
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />  -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<title>jQuery Window Plugin</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<!-- Style Includes -->
+		<link id="jquery_ui_theme_loader" type="text/css" href="../css/jquery-ui.css" rel="stylesheet" />
+		<link type="text/css" href="../css/jquery.window.css" rel="stylesheet" />
+		<link type="text/css" href="./css/jquery.codeview.css" rel="stylesheet" />
+		<link type="text/css" href="./css/jquery.share.css" rel="stylesheet" />
+		<link type="text/css" href="./css/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class='headline'>
+			<div class='title'>
+				<div style='float:left;'>
+				jQuery
+				<font color='#0063DC'>Window</font></div>
+				<div class='ui-corner-all' style='float:left; margin:5px 10px;'>
+					<div class='ui-widget-header ui-corner-top' style='width:40px; height:5px;'></div>
+					<div class='ui-widget-content ui-corner-bottom' style='width:40px; height:25px;'></div>
+				</div>
+				Plugin
+				<span class='verison_block'>
+					v<span id='version_number'></span>
+				</span>
+			</div>
+			<span class='desc'>- To Popup A Beautiful Window-like Dialog</span>
+		</div>
+
+		<div class="top_panel">		
+			<img class="screenshot" src="http://lh3.googleusercontent.com/-0BXDQ82LkTc/TmzU935jy-I/AAAAAAAAEg0/VrtFa5IM83s/s800/ScreenShot00689.png" />
+			<!-- Float Setting Dialog -->
+			<div id='float_setting_dialog' class='ui-corner-all'>
+				<div class='selector_panel'>
+					<div class='text_block'>Theme</div>
+					<a href='http://jqueryui.com/themeroller/' target='_blank'><div class='power_by'></div></a>
+					<select id='theme_selector'>
+						<option>base</option>
+						<option selected>black-tie</option>
+						<option>blitzer</option>
+						<option>cupertino</option>
+						<option>dark-hive</option>
+						<option>dot-luv</option>
+						<option>eggplant</option>
+						<option>excite-bike</option>
+						<option>flick</option>
+						<option>hot-sneaks</option>
+						<option>humanity</option>
+						<option>le-frog</option>
+						<option>mint-choc</option>
+						<option>overcast</option>
+						<option>pepper-grinder</option>
+						<option>redmond</option>
+						<option>smoothness</option>
+						<option>south-street</option>
+						<option>start</option>
+						<option>sunny</option>
+						<option>swanky-purse</option>
+						<option>trontastic</option>
+						<option>ui-darkness</option>
+						<option>ui-lightness</option>
+						<option>vader</option>
+					</select>
+				</div>
+				<div class='color_panel'><div class='text_block'>Header</div><div class='color_block ui-widget-header ui-corner-all'></div></div>
+				<div class='color_panel'><div class='text_block'>Body</div><div class='color_block ui-widget-content ui-corner-all'></div></div>
+				<div class='share_region'></div>
+				<div class='donate_region'>
+					<form class="donate_button" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_xclick">
+					<input type="hidden" name="business" value="firestoke@gmail.com">
+					<input type="hidden" name="item_name" value="Donate for jQuery Window Plugin">
+					<input type="hidden" name="currency_code" value="USD">
+					<input type="hidden" name="amount" value="">
+					<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+					</form>
+					<p>If you'd like to support this plugin or show appreciation...</p> 
+				</div>
+			</div>
+			<iframe class="fb-fans-page" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FjQuery-Window-Plugin%2F116769961667138&amp;width=292&amp;colorscheme=light&amp;connections=10&amp;stream=true&amp;header=true&amp;height=587" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:587px;" allowTransparency="true"></iframe>
+			<div class="link_panel">
+				<a class="link" href="download/jquery-window-5.03.rar">Download Here</a>
+				<a class="link" href="#attributes_block">See Attributes</a>
+				<a class="link" href="#methods_block">See Methods</a>
+				<a class="link" href="#change_log_panel">Change Log</a>
+				<div class="link old_version_link">Old Versions</div>
+				<ul id="old_link_panel">
+					<li><a href="download/jquery-window-5.02.rar">5.02</a></li>
+					<li><a href="download/jquery-window-5.01c.rar">5.01c</a></li>
+					<li><a href="download/jquery-window-5.01b.rar">5.01b</a></li>
+					<li><a href="download/jquery-window-5.01a.rar">5.01a</a></li>
+					<li><a href="download/jquery-window-5.01.rar">5.01</a></li>
+					<li><a href="download/jquery-window-5.00.rar">5.00</a></li>
+					<li><a href="download/jquery-window-4.07b.rar">4.07b</a></li>
+					<li><a href="download/jquery-window-4.07a.rar">v4.07a</a></li>
+					<li><a href="download/jquery-window-4.07.rar">v4.07</a></li>
+					<li><a href="download/jquery-window-4.06.rar">v4.06</a></li>
+					<li><a href="download/jquery-window-4.05.rar">v4.05</a></li>
+					<li><a href="download/jquery-window-4.04.rar">v4.04</a></li>
+					<li><a href="download/jquery-window-4.03.rar">v4.03</a></li>
+					<li><a href="download/jquery-window-4.02.rar">v4.02</a></li>
+					<li><a href="download/jquery-window-4.01.rar">v4.01</a></li>
+					<li><a href="download/jquery-window-4.00.rar">v4.00</a></li>
+					<li><a href="download/jquery-window-3.03.rar">v3.03</a></li>
+					<li><a href="download/jquery-window-3.02.rar">v3.02</a></li>
+					<li><a href="download/jquery-window-3.01.rar">v3.01</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 1 ===========================================-->
+		<div id="example1" class='example_block'>
+			<h2>Example 1 - Using Remote URL</h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				$.window({
+					title: "Cyclops Studio",
+					url: "http://apps.fstoke.me/"
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithRemotingUrl();'>
+			</div>
+		</div>
+
+		<!--=========================================== Example 2 ===========================================-->
+		<div id="example2" class='example_block'>
+			<h2>Example 2 - Using Inner HTML Element</h2>
+			<h3>HTML</h3>
+			<pre class='code html_code'>
+				<div id='window_block2' style='display:none;'>
+					<div style='padding:10px;'>
+						<div style='font-size:24px; font-weight:bold; margin-bottom:10px; color:#44aaff;'>Introduction</div>
+						<img style='border:0; float:left; margin:10px;' src='http://lh5.ggpht.com/_W-5oCUN3-sQ/TNUfmAY_mFI/AAAAAAAADwc/Dav33v1iBlY/s144/Professional%20JavaScript%20for%20Web%20Developers.jpg'/>
+						<div>
+							If you want to achieve JavaScript's full potential, it is critical to understand its nature, history, and limitations. 
+							This book sets the stage by covering JavaScript from its very beginning to the present-day incarnations that include 
+							support for the DOM and Ajax. It also shows you how to extend this powerful language to meet specific needs and create
+							seamless client-server communication without intermediaries such as Java or hidden frames.
+						</div>
+					</div>
+				</div>
+			</pre>
+
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				$.window({
+					showModal: true,
+					modalOpacity: 0.5,
+					icon: "http://www.fstoke.me/favicon.ico",
+					title: "Professional JavaScript for Web Developers",
+					content: $("#window_block2").html(), // load window_block2 html content
+					footerContent: "<img style='vertical-align:middle;' src='img/star.png'> This is a nice plugin :^)"
+				});
+			</pre>
+			
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div id='window_block2' style='display:none;'>
+					<div style='padding:10px;'>
+						<div style='font-size:24px; font-weight:bold; margin-bottom:10px; color:#44aaff;'>Introduction</div>
+						<img style='border:0; float:left; margin:10px;' src='http://lh5.ggpht.com/_W-5oCUN3-sQ/TNUfmAY_mFI/AAAAAAAADwc/Dav33v1iBlY/s144/Professional%20JavaScript%20for%20Web%20Developers.jpg'/>
+						<div>
+							If you want to achieve JavaScript's full potential, it is critical to understand its nature, history, and limitations. 
+							This book sets the stage by covering JavaScript from its very beginning to the present-day incarnations that include 
+							support for the DOM and Ajax. It also shows you how to extend this powerful language to meet specific needs and create
+							seamless client-server communication without intermediaries such as Java or hidden frames.
+						</div>
+					</div>
+				</div>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithHtml();'/>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 3 ===========================================-->
+		<div id="example3" class='example_block'>
+			<h2>Example 3 - Limit Window Boundary and Preare Customized Static Attributes</h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				// prepare customerized static attributes, see static attributes
+				// Note: you should call this method before starting to create window instances, or windows might display wrong. 
+				$.window.prepare({
+					dock: 'bottom',       // change the dock direction: 'left', 'right', 'top', 'bottom'
+					animationSpeed: 200,  // set animation speed
+					minWinLong: 180       // set minimized window long dimension width in pixel
+				});
+				
+				// limit window within body
+				$.window({
+					icon: 'http://www.fstoke.me/favicon.ico',
+					title: "This window only can be dragged within body boundary",
+					content: "<div style='padding:10px; font-weight:bold;'>I only can be dragged within body element."+
+						"<br/><br/>Really? Really? You can try it... :)</div>",
+					checkBoundary: true,
+					x: 80,
+					y: 80
+				});
+
+				// limit window within a element
+				$("#my_boundary_panel").window({
+					icon: 'http://mail.google.com/favicon.ico',
+					title: "This window only can be dragged within its parent element",
+					content: "<div style='border: 15px solid green; padding:10px; font-weight:bold;'>I only can be dragged within my boss...@@</div>",
+					checkBoundary: true,
+					width: 200,
+					height: 160,
+					maxWidth: 400,
+					maxHeight: 300,
+					x: 80,
+					y: 80
+				});
+				
+				// assign the dock area
+				$.window.prepare({
+					dock: 'bottom',       // change the dock direction: 'left', 'right', 'top', 'bottom'
+					dockArea: $('#myDockArea'), // set the dock area
+					animationSpeed: 200,  // set animation speed
+					minWinLong: 180       // set minimized window long dimension width in pixel
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Create a window within HTML body' onclick='createWindowWithBoundary();'>
+				<input type='button' value='Create a window within the below 1st panel' onclick='createWindowWithBoundary("my_boundary_panel");'>
+				<input type='button' value='Create a window within the below 2nd panel' onclick='createWindowWithBoundary("my_boundary_panel2");'>
+				<div>
+					<div id='my_boundary_panel' class="boundary_panel" style="border-color: #6699aa; float: left;"></div>
+					<div id='my_boundary_panel2' class="boundary_panel"></div>
+				</div>
+				<div id="myDockArea" style="width:800px; height:26px; background:#333; border:3px solid black;"></div>
+				<input type='button' value='Dock At Left' onclick='javascript:dock("left");'>
+				<input type='button' value='Dock At Right' onclick='javascript:dock("right");'>
+				<input type='button' value='Dock At Top' onclick='javascript:dock("top");'>
+				<input type='button' value='Dock At Bottom' onclick='javascript:dock("bottom");'>
+				<input type='button' value='Dock Windows At Assigned Area' onclick='javascript:assignDockArea();'>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 4 ===========================================-->
+		<div id="example4" class='example_block'>
+			<h2>Example 4 - Make Window Static</h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				$.window({
+					title: "Un-draggable &amp; Un-resizable Window",
+					content: "<div style='padding:10px; font-weight:bold;'>I can't be dragged...<br/>"+
+						"I can't be resized too...<br/><br/>Of course, maximize and minimize are also disabled... <br/><br/>"+
+						"So... What can I do? I only can be closed. @_@</div>",
+					draggable: false,
+					resizable: false,
+					maximizable: false,
+					minimizable: false,
+					showModal: true
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowStatic();'>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 5 ===========================================-->
+		<div id="example5" class='example_block'>
+			<h2>Example 5 - Create Window with Various Attributes And Callback Functions</h2>
+			<h3>HTML</h3>
+			<pre class='code html_code'>
+				<div id='window_block5' style='display:none;'>
+					<div style='padding:10px;'>
+						<h2>Create Window with Various Attributes And Callback Functions</h2>
+						<div style='font-size:20px;'>The content is overflow window, but it won't show scroll bar...</div>
+						<img src="http://t3.gstatic.com/images?q=tbn:oAM3rMJ0JJRwTM">
+						<img src="http://t0.gstatic.com/images?q=tbn:t4UkGZ_Gry-idM">
+						<img src="http://t3.gstatic.com/images?q=tbn:6lP_mGL7ko3kvM">
+						<img src="http://t0.gstatic.com/images?q=tbn:8U5IY7LMGsIQIM">
+						<img src="http://t2.gstatic.com/images?q=tbn:-UX6iBsU8g_r1M">
+					</div>
+				</div>
+			</pre>
+
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				$.window({
+					title: "complext window",
+					content: $("#window_block5").html(), // load window_block5 html content
+					x: 150,               // the x-axis value on screen, if -1 means put on screen center
+					y: 100,               // the y-axis value on screen, if -1 means put on screen center
+					width: 600,           // window width
+					height: 300,          // window height
+					minWidth: 200,        // the minimum width, if -1 means no checking
+					minHeight: 100,       // the minimum height, if -1 means no checking
+					maxWidth: 700,        // the minimum width, if -1 means no checking
+					maxHeight: 400,       // the minimum height, if -1 means no checking
+					scrollable: false,    // a boolean flag to show scroll bar or not
+					onOpen: function(wnd) {  // a callback function while container is added into body
+						alert('open');
+					},
+					onShow: function(wnd) {  // a callback function while whole window display routine is finished
+						alert('show');
+					},
+					onClose: function(wnd) { // a callback function while user click close button
+						alert('close');
+					},
+					onSelect: function(wnd) { //  a callback function while user select the window
+						log('select');
+					},
+					onUnselect: function(wnd) { // a callback function while window unselected
+						log('unelect');
+					},
+					onDrag: function(wnd) { // a callback function while window is going to drag
+						log('drag');
+					},
+					afterDrag: function(wnd) { // a callback function after window dragged
+						log('after dragged');
+					},
+					onResize: function(wnd) { // a callback function while window is going to resize
+						log('resize');
+					},
+					afterResize: function(wnd) { // a callback function after window resized
+						log('after resized');
+					},
+					onMinimize: function(wnd) { // a callback function while window is going to minimize
+						log('minimize');
+					},
+					afterMinimize: function(wnd) { // a callback function after window minimized
+						log('after minimized');
+					},
+					onMaximize: function(wnd) { // a callback function while window is going to maximize
+						log('maximize');
+					},
+					afterMaximize: function(wnd) { // a callback function after window maximized
+						log('after maximized');
+					},
+					onCascade: function(wnd) { // a callback function while window is going to cascade
+						log('cascade');
+					},
+					afterCascade: function(wnd) { // a callback function after window cascaded
+						log('after cascaded');
+					}
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div class="comment">NOTE: It needs to install <a href="http://getfirebug.com/" target="_blank">Firebug</a> plugin on Firefox or using Chrome browser javascript console to see drag and resize callback log</div>
+				<div id='window_block5' style='display:none;'>
+					<div style='padding:10px;'>
+						<h2>Create Window with Various Attributes And Callback Functions</h2>
+						<div style='font-size:20px;'>The content is overflow window, but it won't show scroll bar...</div>
+						<img src="http://t3.gstatic.com/images?q=tbn:oAM3rMJ0JJRwTM">
+						<img src="http://t0.gstatic.com/images?q=tbn:t4UkGZ_Gry-idM">
+						<img src="http://t3.gstatic.com/images?q=tbn:6lP_mGL7ko3kvM">
+						<img src="http://t0.gstatic.com/images?q=tbn:8U5IY7LMGsIQIM">
+						<img src="http://t2.gstatic.com/images?q=tbn:-UX6iBsU8g_r1M">
+					</div>
+				</div>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowComplex();'>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 6 ===========================================-->
+		<div id="example6" class='example_block'>
+			<h2>Example 6 - Create Window with Iframe Redirect Checking</h2>
+			<div class='method'>Method 1 - Control by Self</div>
+			<h3 style='margin-top:10px;'>Javascript</h3>
+			<pre class='code javascript_code'>
+				// bind window onbeforeunload event with callback function
+				var checkRedirectMsg = null;
+				window.onbeforeunload = function() {
+					if(checkRedirectMsg != null) {
+						return checkRedirectMsg;
+					}
+				}
+
+				// create window to listen iframe start, end and window close event
+				$.window({
+					title: "create window with redirect checking",
+					url: "http://www.myspace.com",
+					onIframeStart: function(wnd, url) {
+						checkRedirectMsg = "the window is going to redirect to URL:\r\n"+url;
+					},
+					onIframeEnd: function(wnd, url) {
+						checkRedirectMsg = null;
+					},
+					onClose: function() {
+						checkRedirectMsg = null;
+					}
+				});
+			</pre>
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div id='window_block5' style='display:none;'></div>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithRedirectChecking();'>
+			</div>
+
+			<div class='method'>Method 2 - Using Window iframeRedirectCheckMsg Attribute</div>
+			<h3 style='margin-top:10px;'>Javascript</h3>
+			<pre class='code javascript_code2'>
+<code_comment>/*
+Set iframeRedirectCheckMsg attribute as a string value, note that there is a {url} text inside.
+It will be replace with real iframe url(e.g. "http://www.myspace.com" in this sample) when
+callback function returns.
+
+The difference between method 1 and 2 is that you can do more things while got onbeforeunload event.
+But the trade-off is you need to write more code to implement this feature instead of just pass a string.
+*/</code_comment>
+$.window({
+    title: "create window with redirect checking",
+    url: "http://www.myspace.com",
+    iframeRedirectCheckMsg: "the window is going to redirect to <span class='parameter'>{url}</span>!!\r\nPlease select 'cancel' to stay here."
+});
+			</pre>
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithRedirectChecking2();'>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 7 ===========================================-->
+		<div id="example7" class='example_block'>
+			<h2>Example 7 - Create Window with Customized Icon Button</h2>
+			<div class='method'>Method 1 - Passing A JSON Array With Button Object Definition</div>
+			<h3 style='margin-top:10px;'>Javascript</h3>
+			<pre class='code javascript_code'>
+				// create buttons definition JSON Array
+				var myButtons = [
+					// facebook button
+					{
+					id: "btn_facebook",           // required, it must be unique in this array data
+					title: "share to facebook",   // optional, it will popup a tooltip by browser while mouse cursor over it
+					clazz: "my_button",           // optional, don't set border, padding, margin or any style which will change element position or size
+					style: "",                    // optional, don't set border, padding, margin or any style which will change element position or size
+					image: "img/facebook.gif",    // required, the url of button icon(16x16 pixels)
+					callback:                     // required, the callback function while click it
+						function(btn, wnd) {
+							wnd.getContainer().find("#demo_text").text("Share to facebook!");
+							wnd.getContainer().find("#demo_logo").attr("src", "img/facebook_300x100.png");
+						}
+					},
+					// twitter button
+					{
+					id: "btn_twitter",
+					title: "share to twitter",
+					clazz: "my_button",
+					style: "background:#eee;",
+					image: "img/twitter.png",
+					callback:
+						function(btn, wnd) {
+							wnd.getContainer().find("#demo_text").text("Share to twitter!");
+							wnd.getContainer().find("#demo_logo").attr("src", "img/twitter_300x100.jpg");
+						}
+					}
+				];
+
+				// pass the JSON Array to "custBtns" attribute
+				$.window({
+					title: "create window with customized icon buttons",
+					content: "<div style='padding:10px;'>"+
+						"<div id='demo_text' style='font-size:24px;'>You can share something here...</div>"+
+						"<img id='demo_logo' src='' alt=''/>"+
+						"</div>",
+					custBtns: myButtons
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithCustBtnsByJson();'>
+			</div>
+
+			<div class='method'>Method 2 - Passing A JSON Array With HTML Element</div>
+			<h3 style='margin-top:10px;'>HTML</h3>
+			<pre class='code html_code2'>
+				<div id='my_facebook_btn' style="display:none; background-image:url('img/facebook.gif');"></div>
+				<div id='my_twitter_btn' style="display:none; background-image:url('img/twitter.png'); background-color:#eee;"></div>
+			</pre>
+
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code2'>
+				// bind button element event
+				var facebookBtn = $("#my_facebook_btn");
+				facebookBtn.unbind("click");
+				facebookBtn.click(function() {
+					alert('Share to facebook!');
+				});
+				facebookBtn.unbind("mouseover");
+				facebookBtn.mouseover(function() {
+					var container = $(this).parents(".window_panel"); // get window container
+					container.find("#demo_text").text("Share to facebook!");
+					container.find("#demo_logo").attr("src", "img/facebook_300x100.png");
+				});
+
+				var twitterBtn = $("#my_twitter_btn");
+				twitterBtn.unbind("click");
+				twitterBtn.click(function() {
+					alert('Share to twitter!');
+				});
+				twitterBtn.unbind("mouseover");
+				twitterBtn.mouseover(function() {
+					var container = $(this).parents(".window_panel"); // get window container
+					container.find("#demo_text").text("Share to twitter!");
+					container.find("#demo_logo").attr("src", "img/twitter_300x100.jpg");
+				});
+
+				// create buttons element JSON Array
+				// Note that passing a pure HTML element or a jQuery wrapped element object are both working
+				var myButtons = [
+					facebookBtn,
+					document.getElementById("my_twitter_btn")
+				];
+
+				// pass the JSON Array to "custBtns" attribute
+				$.window({
+					title: "create window with customized icon buttons",
+					content: "<div style='padding:10px;'>"+
+						"<div id='demo_text' style='font-size:24px;'>You can share something here...</div>"+
+						"<img id='demo_logo' src='' alt=''/>"+
+						"</div>",
+					custBtns: myButtons
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div id='my_facebook_btn' style="display:none; background-image:url('img/facebook.gif');"></div>
+				<div id='my_twitter_btn' style="display:none; background-image:url('img/twitter.png'); background-color:#eee;"></div>
+				<input type='button' value='Click Here to Create Window' onclick='createWindowWithCustBtnsByElm();'>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 8 ===========================================-->
+		<div id="example8" class='example_block'>
+			<h2>Example 8 - Customize Window Theme</h2>
+			<h3>HTML</h3>
+			<pre class='code html_code'>
+				<div id='window_block8' style='display:none;'>
+					<div style='padding:10px;'>
+						<div style='font-size:24px; font-weight:bold; margin-bottom:10px; color:#44aaff;'>Introduction</div>
+						<img style='border-left: 4px solid #eee; border-top: 4px solid #eee; float:left; margin:5px 10px 5px 5px;' src='http://lh3.ggpht.com/_W-5oCUN3-sQ/TNUfmJ3lwAI/AAAAAAAADwY/eAxNYIyBY5Y/s800/Pro%20JavaScript%20Design%20Patterns.gif'/>
+						<div>
+							Starting with the basics of object-oriented programming applicable to design 
+							patterns, this work covers making JavaScript more expressive, inheritance, 
+							encapsulation, information hiding, and more. The second part of the book 
+							addresses several design patterns, including composites, decorators, fades, 
+							and adapters.
+						</div>
+					</div>
+				</div>
+			</pre>
+			
+			<h3>CSS</h3>
+			<pre class='code css_code'>
+				.my_container {
+					color: orange;
+				}
+				
+				.my_header {
+					font-family: Times New Roman, Serif
+					font-size: 16px;
+					font-style: oblique;
+					font-weight: bold;
+					letter-spacing: 2px;
+					background: gold;
+				}
+				
+				.my_frame {
+					letter-spacing: 3px;
+					font-size: 14px;
+				}
+				
+				.my_footer {
+					letter-spacing: 2px;
+					background: #eee;
+					color: #333;
+				}
+				
+				.my_selected_header {
+					background: purple;
+					color: #ddd;
+				}
+			</pre>
+
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				$.window({
+					title: "Pro JavaScript Design Patterns",
+					content: $("#window_block8"), // load window_block8 html content
+					containerClass: "my_container",
+					headerClass: "my_header",
+					frameClass: "my_frame",
+					footerClass: "my_footer",
+					selectedHeaderClass: "my_selected_header",
+					showFooter: false,
+					showRoundCorner: true,
+					createRandomOffset: {x:200, y:150}
+				});
+			</pre>
+
+			<h3>Demo</h3>
+			<style>
+				.my_container {
+					color: orange;
+				}
+				
+				.my_header {
+					font-family: Times New Roman, Serif
+					font-size: 16px;
+					font-style: oblique;
+					font-weight: bold;
+					letter-spacing: 2px;
+					background: gold;
+					color: red;
+				}
+				
+				.my_frame {
+					letter-spacing: 3px;
+					font-size: 14px;
+				}
+				
+				.my_footer {
+					letter-spacing: 2px;
+					background: #eee;
+					color: #333;
+				}
+				
+				.my_selected_header {
+					background: purple;
+					color: #ddd;
+				}
+			</style>
+			<div class='demo'>
+				<div id='window_block8' style='display:none;'>
+					<div style='padding:10px;'>
+						<div style='font-size:24px; font-weight:bold; margin-bottom:10px; color:#44aaff;'>Introduction</div>
+						<img style='border-left: 4px solid #eee; border-top: 4px solid #eee; float:left; margin:5px 10px 5px 5px;' src='http://lh3.ggpht.com/_W-5oCUN3-sQ/TNUfmJ3lwAI/AAAAAAAADwY/eAxNYIyBY5Y/s800/Pro%20JavaScript%20Design%20Patterns.gif'/>
+						<div>
+							Starting with the basics of object-oriented programming applicable to design 
+							patterns, this work covers making JavaScript more expressive, inheritance, 
+							encapsulation, information hiding, and more. The second part of the book 
+							addresses several design patterns, including composites, decorators, fades, 
+							and adapters.
+						</div>
+					</div>
+				</div>
+				<input type='button' value='Click Here to Create Window' onclick='createCustWindow();'/>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 9 ===========================================-->
+		<div id="example9" class='example_block'>
+			<h2>Example 9 - Manipulate Windows</h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				function create3Window() {
+					for( var i=0; i<3; i++ ) {
+						$.window({
+							title: "this is window "+i,
+							content: "<font size='5' style='padding:10px;'>you can minimize some windows and try click function buttons...</font>",
+							onClose: function(wnd) {
+								alert("close window: "+wnd.getWindowId());
+							}
+						});
+					}
+				}
+				function hideAllWindow() {
+					$.window.hideAll(); // hide all windows
+				}
+				function showAllWindow() {
+					$.window.showAll(); // show all windows
+				}
+				function closeAllWindow() {
+					$.window.closeAll(); // close all windows
+				}
+				function closeAllWindowQuiet() {
+					$.window.closeAll(true); // close all windows without callback
+				}
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<input type='button' value='Click Here to Create 3 Window' onclick='create3Window();'/>
+				<input type='button' value='Hide All Window' onclick='hideAllWindow();'/>
+				<input type='button' value='Show All Window' onclick='showAllWindow();'/>
+				<input type='button' value='Close All Window' onclick='closeAllWindow();'/>
+				<input type='button' value='Close All Window Quietly (Without onClose callback)' onclick='closeAllWindowQuiet();'/>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 10 ===========================================-->
+		<div id="example10" class='example_block'>
+			<h2>Example 10 - Change Window Display Dynamically</h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				var sampleWnd = null; // to remember last created window instance
+				function createSampleWindow() { // create a inner html window
+					sampleWnd = $.window({
+						title: "Professional JavaScript for Web Developers",
+						content: $("#window_block2").html(), // load window_block2 html content
+						footerContent: "<img style='vertical-align:middle;' src='img/star.png'>"+
+								"<img style='vertical-align:middle;' src='img/star.png'>"+
+								"<img style='vertical-align:middle;' src='img/star.png'>"+
+								" This is a nice plugin :^)"
+					});
+				}
+				function createRemoteSampleWindow() { // create a iframe window
+					sampleWnd = $.window({
+						title: "iPhone App: Gambling Memo",
+						url: "http://itunes.apple.com/tw/app/id430593279?mt=8"
+					});
+				}
+				function changeSampleWindowTitle() { // trigger by Change Title button
+					if( sampleWnd != null ) {
+						sampleWnd.setTitle("New Title Here");
+					}
+				}
+				function changeSampleWindowIcon() { // trigger by Change Icon button
+					if( sampleWnd != null ) {
+						sampleWnd.setIcon("http://mail.google.com/favicon.ico");
+					}
+				}
+				function changeSampleWindowContent() { // trigger by Change Content button
+					if( sampleWnd != null ) {
+						sampleWnd.setContent("<img style='float:left; margin:5px;' src='http://lh3.ggpht.com/_W-5oCUN3-sQ/TNUfl0dmtXI/AAAAAAAADwU/JcD0Gs-6VgY/s800/JavaScript%20%20-%20The%20Good%20Parts.jpg'>"+
+							"The first version of this paper, written in 2003, had several shortcomings, not the least of which was that the techniques described were specific to Internet Explorer. I've updated and improved on the original, to document the current state of the art, especially in light of the extensive interest in <b>AJAX</b> technology and the increasing adoption of the FireFox browser.");
+					}
+				}
+				function changeSampleWindowUrl() { // trigger by Change URL button
+					if( sampleWnd != null ) {
+						sampleWnd.setUrl("http://www.yahoo.com//");
+					}
+				}
+				function changeSampleWindowFooterContent() { // trigger by Change Footer Content button
+					if( sampleWnd != null ) {
+						sampleWnd.setFooterContent("New Footer Content...");
+					}
+				}
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div class='simple_block'>Change Inner HTML Window Display<br/>
+					<input type='button' value='Create A Window' onclick='createSampleWindow()'/>
+					<input type='button' value='Change Title' onclick='changeSampleWindowTitle();'/>
+					<input type='button' value='Change Content' onclick='changeSampleWindowContent();'/>
+					<input type='button' value='Change Footer Content' onclick='changeSampleWindowFooterContent();'/>
+					<input type='button' value='Change Icon' onclick='changeSampleWindowIcon();'/>
+				</div>
+				<div class='simple_block'>Change Remote URL Window Display<br/>
+					<input type='button' value='Create A Window' onclick='createRemoteSampleWindow()'/>
+					<input type='button' value='Change Title' onclick='changeSampleWindowTitle();'/>
+					<input type='button' value='Change URL' onclick='changeSampleWindowUrl();'/>
+					<input type='button' value='Change Footer Content' onclick='changeSampleWindowFooterContent();'/>
+					<input type='button' value='Change Icon' onclick='changeSampleWindowIcon();'/>
+				</div>
+				<div class='comment'>Note: The demo code will change the last created window only.</div>
+			</div>
+		</div>
+		
+		<!--=========================================== Example 10 ===========================================-->
+		<div id="example11" class='example_block'>
+			<h2>Example 11 - Change Window Size and Position Dynamically </h2>
+			<h3>JavaScript</h3>
+			<pre class='code javascript_code'>
+				// create a window
+				sampleWnd = $.window({
+					.....
+				});
+				
+				// move the window to specific x,y position
+				var y = $('#example11').offset().top + 50;
+				sampleWnd.move(400, y);
+				
+				// shift the window by passed x,y parameter (in pixels)
+				sampleWnd.move(100, -50, true);
+				
+				// resize the window by passed w,h parameter
+				sampleWnd.resize(200, 150);
+			</pre>
+
+			<h3>Demo</h3>
+			<div class='demo'>
+				<div class='simple_block'>Change Inner HTML Window Display<br/>
+					<input type='button' value='Create A Window' onclick='createSampleWindow()'/>
+					<input type='button' value='Move the created window' onclick='javascript:moveWindow();'>
+					<input type='button' value='Shift the created window' onclick='javascript:moveWindow(true);'>
+					<input type='button' value='Resize the created window' onclick='javascript:resizeWindow();'>
+				</div>
+				<div class='comment'>Note: The demo code will change the last created window only.</div>
+			</div>
+		</div>
+		
+		<!--=========================================== attributes ===========================================-->
+		<div id='attributes_block' class='readme_block'>
+			<h3>Static Attributes</h3>
+			<table class='attributes_list'>
+				<tr><td class='attribute'>dock</td>
+					<td class='attr_desc'>[string:"left"] the direction of minimized window dock at. the available values are [left, right, top, bottom]</td>
+				</tr>
+				<tr><td class='attribute'>dockArea</td>
+					<td class='attr_desc'>[jquery object, element:null] the area which the windows will dock at</td>
+				</tr>
+				<tr><td class='attribute'>animationSpeed</td>
+					<td class='attr_desc'>[number:400] the speed of animations: maximize, minimize, restore, shift, in milliseconds</td>
+				</tr>
+				<tr><td class='attribute'>minWinNarrow</td>
+					<td class='attr_desc'>[number:24] the narrow dimension of minimized window</td>
+				</tr>
+				<tr><td class='attribute'>minWinLong</td>
+					<td class='attr_desc'>[number:120] the long dimension of minimized window</td>
+				</tr>
+				<tr><td class='attribute'>handleScrollbar</td>
+					<td class='attr_desc'>[boolean:true] to handle browser scrollbar when window status changed(maximize, minimize, cascade)</td>
+				</tr>
+				<tr><td class='attribute'>showLog</td>
+					<td class='attr_desc'>[boolean:false] to decide show log in firebug, IE8, chrome console</td>
+				</tr>
+			</table>
+			<br/>
+			
+			<h3>Instance Attributes</h3>
+			<table class='attributes_list'>
+				<tr><td class='attribute'>icon</td>
+					<td class='attr_desc'>[string:"auto"] an icon image url string. if this attribute is given, it will force to replace the original favicon of remote page on window. or you can set it as null to hide icon.</td>
+				</tr>
+				<tr><td class='attribute'>title</td>
+					<td class='attr_desc'>[string:""] the title text of window</td>
+				</tr>
+				<tr><td class='attribute'>url</td>
+					<td class='attr_desc'>[string:""] the target url of iframe ready to load.</td>
+				</tr>
+				<tr><td class='attribute'>content</td>
+					<td class='attr_desc'>[html string, jquery object, element:""] this attribute only works when url is null. when passing a jquery object or a element, it will clone the original one to append.</td>
+				</tr>
+				<tr><td class='attribute'>footerContent</td>
+					<td class='attr_desc'>[html string, jquery object, element:""] same as content attribute, but it's put on footer panel.</td>
+				</tr>
+				<tr><td class='attribute'>containerClass</td>
+					<td class='attr_desc'>[string:""] container extra class</td>
+				</tr>
+				<tr><td class='attribute'>headerClass</td>
+					<td class='attr_desc'>[string:""] header extra class</td>
+				</tr>
+				<tr><td class='attribute'>frameClass</td>
+					<td class='attr_desc'>[string:""] frame extra class</td>
+				</tr>
+				<tr><td class='attribute'>footerClass</td>
+					<td class='attr_desc'>[string:""] footer extra class</td>
+				</tr>
+				<tr><td class='attribute'>selectedHeaderClass</td>
+					<td class='attr_desc'>[string:""] selected header extra class</td>
+				</tr>
+				<tr><td class='attribute'>x</td>
+					<td class='attr_desc'>[number:-1] the x-axis value on screen(or caller element), if -1 means put on screen(or caller element) center</td>
+				</tr>
+				<tr><td class='attribute'>y</td>
+					<td class='attr_desc'>[number:-1] the y-axis value on screen(or caller element), if -1 means put on screen(or caller element) center</td>
+				</tr>
+				<tr><td class='attribute'>z</td>
+					<td class='attr_desc'>[number:2000] the css z-index value</td>
+				</tr>
+				<tr><td class='attribute'>width</td>
+					<td class='attr_desc'>[number:400] window width</td>
+				</tr>
+				<tr><td class='attribute'>height</td>
+					<td class='attr_desc'>[number:300] window height</td>
+				</tr>
+				<tr><td class='attribute'>minWidth</td>
+					<td class='attr_desc'>[number:200] the minimum width, if -1 means no checking</td>
+				</tr>
+				<tr><td class='attribute'>minHeight</td>
+					<td class='attr_desc'>[number:150] the minimum height, if -1 means no checking</td>
+				</tr>
+				<tr><td class='attribute'>maxWidth</td>
+					<td class='attr_desc'>[number:800] the maximum width, if -1 means no checking</td>
+				</tr>
+				<tr><td class='attribute'>maxHeight</td>
+					<td class='attr_desc'>[number:600] the maximum height, if -1 means no checking</td>
+				</tr>
+				<tr><td class='attribute'>showModal</td>
+					<td class='attr_desc'>[boolean:false] to control show modal on background</td>
+				</tr>
+				<tr><td class='attribute'>modalOpacity</td>
+					<td class='attr_desc'>[number:0.5] the opacity of modal dialog</td>
+				</tr>
+				<tr><td class='attribute'>showFooter</td>
+					<td class='attr_desc'>[boolean:true] to control show footer panel</td>
+				</tr>
+				<tr><td class='attribute'>showRoundCorner</td>
+					<td class='attr_desc'>[boolean:true] to control display window as round corner</td>
+				</tr>
+				<tr><td class='attribute'>closable</td>
+					<td class='attr_desc'>[boolean:true] to control window closable</td>
+				</tr>
+				<tr><td class='attribute'>minimizable</td>
+					<td class='attr_desc'>[boolean:true] to control window minimizable</td>
+				</tr>
+				<tr><td class='attribute'>maximizable</td>
+					<td class='attr_desc'>[boolean:true] to control window maximizable</td>
+				</tr>
+				<tr><td class='attribute'>bookmarkable</td>
+					<td class='attr_desc'>[boolean:true] to control window with remote url could be bookmarked</td>
+				</tr>
+				<tr><td class='attribute'>draggable</td>
+					<td class='attr_desc'>[boolean:true] to control window draggable</td>
+				</tr>
+				<tr><td class='attribute'>resizable</td>
+					<td class='attr_desc'>[boolean:true] to control window resizable</td>
+				</tr>
+				<tr><td class='attribute'>scrollable</td>
+					<td class='attr_desc'>[boolean:true] to show scroll bar or not</td>
+				</tr>
+				<tr><td class='attribute'>checkBoundary</td>
+					<td class='attr_desc'>[boolean:false] to check window dialog overflow html body or caller element</td>
+				</tr>
+				<tr><td class='attribute'>withinBrowserWindow</td>
+					<td class='attr_desc'>[boolean:false] to limit window only can be dragged within browser window. this attribute only works when checkBoundary is true and caller is null.</td>
+				</tr>
+				<tr><td class='attribute'>custBtns</td>
+					<td class='attr_desc'>[json array:null] to describe the customized button display and callback function</td>
+				</tr>
+				<tr><td class='attribute'>onOpen</td>
+					<td class='attr_desc'>[function:null] a callback function while container is added into body</td>
+				</tr>
+				<tr><td class='attribute'>onShow</td>
+					<td class='attr_desc'>[function:null] a callback function while whole window display routine is finished</td>
+				</tr>
+				<tr><td class='attribute'>onClose</td>
+					<td class='attr_desc'>[function:null] a callback function while user click close button</td>
+				</tr>
+				<tr><td class='attribute'>onSelect</td>
+					<td class='attr_desc'>[function:null] a callback function while user select the window</td>
+				</tr>
+				<tr><td class='attribute'>onUnselect</td>
+					<td class='attr_desc'>[function:null] a callback function while window unselected</td>
+				</tr>
+				<tr><td class='attribute'>onDrag</td>
+					<td class='attr_desc'>[function:null] a callback function while window is going to drag</td>
+				</tr>
+				<tr><td class='attribute'>afterDrag</td>
+					<td class='attr_desc'>[function:null] a callback function after window dragged</td>
+				</tr>
+				<tr><td class='attribute'>onResize</td>
+					<td class='attr_desc'>[function:null] a callback function while window is going to resize</td>
+				</tr>
+				<tr><td class='attribute'>afterResize</td>
+					<td class='attr_desc'>[function:null] a callback function after window resized</td>
+				</tr>
+				<tr><td class='attribute'>onMinimize</td>
+					<td class='attr_desc'>[function:null] a callback function while window is going to minimize</td>
+				</tr>
+				<tr><td class='attribute'>afterMinimize</td>
+					<td class='attr_desc'>[function:null] a callback function after window minimized</td>
+				</tr>
+				<tr><td class='attribute'>onMaximize</td>
+					<td class='attr_desc'>[function:null] a callback function while window is going to maximize</td>
+				</tr>
+				<tr><td class='attribute'>afterMaximize</td>
+					<td class='attr_desc'>[function:null] a callback function after window maximized</td>
+				</tr>
+				<tr><td class='attribute'>onCascade</td>
+					<td class='attr_desc'>[function:null] a callback function while window is going to cascade</td>
+				</tr>
+				<tr><td class='attribute'>afterCascade</td>
+					<td class='attr_desc'>[function:null] a callback function after window cascaded</td>
+				</tr>
+				<tr><td class='attribute'>onIframeStart</td>
+					<td class='attr_desc'>[function:null] a callback function while iframe ready to connect remoting url. this attribute only works while url attribute is given</td>
+				</tr>
+				<tr><td class='attribute'>onIframeEnd</td>
+					<td class='attr_desc'>[function:null] a callback function while iframe load finished. this attribute only works while url attribute is given</td>
+				</tr>
+				<tr><td class='attribute'>iframeRedirectCheckMsg</td>
+					<td class='attr_desc'>[string:null] if null means no check, or pass a string to show warning message while iframe is going to redirect current top page</td>
+				</tr>
+				<tr><td class='attribute'>createRandomOffset</td>
+					<td class='attr_desc'>[json object:{x:0, y:0}] random the new created window position, it only works when options x,y value both are -1</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!--=========================================== methods ===========================================-->
+		<div id='methods_block' class='readme_block'>
+			<h3>Static Methods ( $.window.[method name] )</h3>
+			<table class='methods_list'>
+				<tr><td class='method_name'>prepare</td>
+					<td class='method_desc'>initialize with customerized static setting attributes</td>
+				</tr>
+					<tr><td class='method_param'><font color='#000'>∟</font> custSetting</td>
+						<td class='method_desc'><span class='format_define'>[object]</span>the customerized static attributes object</td>
+					</tr>
+				<tr><td class='method_name'>closeAll</td>
+					<td class='method_desc'>close all created windows</td>
+				</tr>
+					<tr><td class='method_param'><font color='#000'>∟</font> quiet</td>
+						<td class='method_desc'><span class='format_define'>[boolean]</span>to decide doing callback or not</td>
+					</tr>
+				<tr><td class='method_name'>hideAll</td>
+					<td class='method_desc'>hide all created windows</td>
+				</tr>
+				<tr><td class='method_name'>showAll</td>
+					<td class='method_desc'>show all created windows</td>
+				</tr>
+				<tr><td class='method_name'>getAll</td>
+					<td class='method_desc'>return all created windows instance</td>
+				</tr>
+				<tr><td class='method_name'>getWindow</td>
+					<td class='method_desc'>get the window instance by passed window id</td>
+				</tr>
+					<tr><td class='method_param'><font color='#000'>∟</font> windowId</td>
+						<td class='method_desc'><span class='format_define'>[string]</span>the target window id</td>
+					</tr>
+				<tr><td class='method_name'>getSelectedWindow</td>
+					<td class='method_desc'>get the selected window instance</td>
+				</tr>
+			</table>
+			<br/>
+			
+			<h3>Instance Methods</h3>
+			<table class='methods_list'>
+				<tr><td class='method_name'>getWindowId</td>
+					<td class='method_desc'>get window id</td>
+				</tr>
+				<tr><td class='method_name'>getCaller</td>
+					<td class='method_desc'>get window container's parent panel, it's a jQuery object</td>
+				</tr>
+				<tr><td class='method_name'>getContainer</td>
+					<td class='method_desc'>get window container panel, it's a jQuery object</td>
+				</tr>
+				<tr><td class='method_name'>getHeader</td>
+					<td class='method_desc'>get window header panel, it's a jQuery object</td>
+				</tr>
+				<tr><td class='method_name'>getFrame</td>
+					<td class='method_desc'>get window frame panel, it's a jQuery object</td>
+				</tr>
+				<tr><td class='method_name'>getFooter</td>
+					<td class='method_desc'>get window footer panel, it's a jQuery object</td>
+				</tr>
+				<tr><td class='method_name'>alignCenter</td>
+					<td class='method_desc'>set current window as screen center</td>
+				</tr>
+				<tr><td class='method_name'>alignHorizontalCenter</td>
+					<td class='method_desc'>set current window as horizontal center</td>
+				</tr>
+				<tr><td class='method_name'>alignVerticalCenter</td>
+					<td class='method_desc'>set current window as vertical center</td>
+				</tr>
+				<tr><td class='method_name'>select</td>
+					<td class='method_desc'>select current window, it will increase the original z-index value with 2</td>
+				</tr>
+				<tr><td class='method_name'>unselect</td>
+					<td class='method_desc'>unselect current window, it will set the z-index as original options.z</td>
+				</tr>
+				<tr><td class='method_name'>move</td>
+					<td class='method_desc'>move current window to target position or shift it by passed distance</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> x</td>
+					<td class='method_desc'><span class='format_define'>[number]</span>the absolute x-axis value on document or shift distance, in pixels</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> y</td>
+					<td class='method_desc'><span class='format_define'>[number]</span>the absolute y-axis value on document or shift distance, in pixels</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> bShift</td>
+					<td class='method_desc'><span class='format_define'>[boolean]</span>a boolean flag to decide to shift the window position with x,y</td>
+				</tr>
+				<tr><td class='method_name'>resize</td>
+					<td class='method_desc'>resize current window to target width/height</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> w</td>
+					<td class='method_desc'><span class='format_define'>[number]</span>target width value, in pixels</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> h</td>
+					<td class='method_desc'><span class='format_define'>[number]</span>target height value, in pixels</td>
+				</tr>
+				<tr><td class='method_name'>maximize</td>
+					<td class='method_desc'>maximize current window</td>
+				</tr>
+				<tr><td class='method_name'>minimize</td>
+					<td class='method_desc'>minimize current window</td>
+				</tr>
+				<tr><td class='method_name'>restore</td>
+					<td class='method_desc'>restore current window, it could be maximized or cascade status</td>
+				</tr>
+				<tr><td class='method_name'>close</td>
+					<td class='method_desc'>close current window</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> quiet</td>
+					<td class='method_desc'><span class='format_define'>[boolean]</span>to decide doing callback or not</td>
+				</tr>
+				<tr><td class='method_name'>hide</td>
+					<td class='method_desc'>hide current window</td>
+				</tr>
+				<tr><td class='method_name'>show</td>
+					<td class='method_desc'>show current window</td>
+				</tr>
+				<tr><td class='method_name'>setTitle</td>
+					<td class='method_desc'>change window title</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> title</td>
+					<td class='method_desc'><span class='format_define'>[string]</span>window title text</td>
+				</tr>
+				<tr><td class='method_name'>setUrl</td>
+					<td class='method_desc'>change iframe url</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> url</td>
+					<td class='method_desc'><span class='format_define'>[string]</span>iframe url</td>
+				</tr>
+				<tr><td class='method_name'>setContent</td>
+					<td class='method_desc'>change frame content</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> content</td>
+					<td class='method_desc'><span class='format_define'>[html string, jquery object, element]</span> the content of frame</td>
+				</tr>
+				<tr><td class='method_name'>setFooterContent</td>
+					<td class='method_desc'>change footer content</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> content</td>
+					<td class='method_desc'><span class='format_define'>[html string, jquery object, element]</span> the content of footer</td>
+				</tr>
+				<tr><td class='method_name'>getTitle</td>
+					<td class='method_desc'>get window title text</td>
+				</tr>
+				<tr><td class='method_name'>getUrl</td>
+					<td class='method_desc'>get url string</td>
+				</tr>
+				<tr><td class='method_name'>getContent</td>
+					<td class='method_desc'>get frame html content</td>
+				</tr>
+				<tr><td class='method_name'>getFooterContent</td>
+					<td class='method_desc'> get footer html content</td>
+				</tr>
+				<tr><td class='method_name'>isMaximized</td>
+					<td class='method_desc'>get window maximized status</td>
+				</tr>
+				<tr><td class='method_name'>isMinimized</td>
+					<td class='method_desc'>get window minmized status</td>
+				</tr>
+				<tr><td class='method_name'>isSelected</td>
+					<td class='method_desc'>get window selected status</td>
+				</tr>
+				<tr><td class='method_name'>setIcon</td>
+					<td class='method_desc'>set window icon</td>
+				</tr>
+				<tr><td class='method_param'><font color='#000'>∟</font> iconUrl</td>
+					<td class='method_desc'><span class='format_define'>[string]</span> the image url of icon</td>
+				</tr>
+				<tr><td class='method_name'>showIcon</td>
+					<td class='method_desc'>show window icon</td>
+				</tr>
+				<tr><td class='method_name'>hideIcon</td>
+					<td class='method_desc'>hide window icon</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class='readme_block'>
+			<h3>HTML Sample</h3>
+			<pre class='code'>
+<span class="comment">&lt;!-- DTD --&gt;</span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+
+<span class="comment">&lt;!-- Style Includes --&gt;</span>
+&lt;link type="text/css" href="js/jquery/themes/black-tie/jquery-ui.css" rel="stylesheet" /&gt;
+&lt;link type="text/css" href="js/jquery/window/css/jquery.window.css" rel="stylesheet" /&gt;
+
+<span class="comment">&lt;!-- JavaScript Includes --&gt;</span>
+&lt;script type="text/javascript" src="js/jquery/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery/jquery-ui.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery/window/jquery.window.js"&gt;&lt;/script&gt;</pre>
+		</div>
+
+
+		<div class='readme_block'>
+			<h3>Required Libraries</h3>
+			<ul>
+				<li>jquery.js (v1.3.2)</li>
+				<li>jquery-ui.js (v1.7.2)</li>
+			</ul>
+		</div>
+
+		<div class='readme_block'>
+			<h3>Known Issues</h3>
+				<pre style='font-size:16px;'>
+ ISU_002 - The window could be resized overlay its parent even it's set boundary within its parent.
+ ISU_005 - When window maximized, even the browser scroll bar is already disabled, it still can be scrolled in Opera.
+ ISU_006 - When window maximized, the browser scroll bar still exists until browser REPAINT in IE7. IE8 is fine.
+           (This case seems only happen at the window content is not a iframe)
+           (What time the browser will repaint? popup a alert dialog, switch browser page tab, alt + tab to switch application...etc.)
+ ISU_007 - It will delay display new title while window is minimized, until browser REPAINT. IE7/8 both happens.
+           This case root cause seems is IE browser can't handle a element whose position is "fixed" correctly.</pre>
+		</div>
+		
+		<div class='readme_block'>
+			<h3>Fixed Issues</h3>
+			<pre style='font-size:16px;'>
+ ISU_001 - If drag or resize a window first, then do maximize, the window will disappear while mouse down the header panel. 
+           It will appear again when mouse up.
+ ISU_003 - When resizing over an IFRAME, it lost the mouse event. - Thank for crabo!
+ ISU_004 - When the window is maximized, mouse scroll and text input delay about 3 seconds in IE browser.
+           It's caused by IE browser can't support css position attribute "fixed" correctly.</pre>
+		</div>
+
+		<div id='change_log_panel' class='readme_block'>
+			<h3>Version Update Change Log</h3><div class='more'> &nbsp; &nbsp; &nbsp;view more</div>
+			<pre style='font-size:16px;'>
+Version 5.03 change log:
+- fix bug: if window's parent or dockArea is a absolute position element, it will occur display error in many situations.
+- add a new attribute: withinBrowserWindow, let window could be dragged within browser window.
+- add some check logic in _iconOnLoad() to avoid some unexpected conditions happened.
+
+Version 5.02 change log:
+ - Add new feature: showing window icon on title bar area. You can set icon attribute as an image url to show it. 
+   If it's a remote page and the icon attribute value is 'auto', then it will auto-grab remote page faviocn as displaying icon.
+ - Add new feature: add a static setting attirbute - dockArea, let you can assign the dock area when window minimized.
+   Once you set this attribute, no matter windows' caller element is html body or a html element, they will all dock at the area that you assigned.
+ - Add new feature: you can set attributes - showModal, modalOpacity to make it showing a modal dialog on background when a window is created.
+ - Add instance methods - setIcon, showIcon, hideIcon.
+ 
+Version 5.01b change log:
+ - Add instance method - hide(), show()
+ 
+ Version 5.01a change log:
+ - Add isSelected instance method and getSelectedWindow static method
+ 
+ Version 5.01 change log:
+ - Add onSelect, onUnselect, selectedHeaderClass attributes
+ - Add move, resize instance methods
+ - Fix some UI bug when user maximized or minimized
+ - Change the css left, top attributes instead of margin-left, margin-top when window align center or status changed
+ 
+ Version 5.00 change log:
+ - Dock at four direction on browser is possible now. ('left', 'right', 'top', 'bottom') 
+ - Windows which get a caller will be displayed within caller element now at all status.
+ - Minimized windows will be auto-resized while the total width or height exceed the screen or parent element.
+ - Add static attributes for initialze common window display and behavior
+ - Add a new static method: prepare 
+ - Remove static methods: setAnimationSpeed, skipHandleScroll
+ - Add instance functions: getCaller, isMaximized, isMinimized
+ - Remove showLog instance attribute 
+ - Speedup performance
+ 
+ Version 4.07b change log:
+ - Add drag and resize callback attribute - onDrag, afterDrag, onResize, afterResize.
+ 
+ Version 4.07a change log:
+ - Let the image attribute of custBtns object could be null value. If image is null, it will append div tag instead. 
+ 
+ Version 4.07 change log:
+ - To fix the right or bottom edge of window can't be trigger to resize while scrollbar appears on IE browser
+ 
+ Version 4.06 change log:
+ - Add getAll static function to retrieve all created windows 
+ - Add getWindow static function to retrieve target window instance via window id
+ - Add getTitle, getUrl, getContent, getFooterContent functions to retrieve various dispaly data
+ - Add skipHandleScroll static function to skip handling browser scrollbar when window status changed
+ - Modify createRandomOffset default value as {x:0, y:0}
+ - Add onMinimize, afterMinimize, onMaximize, afterMaximize, onCascade, afterCascade callback functions
+ - Fix create window inner a element display wrong when align center
+ 
+ Version 4.05 change log:
+ - Add round corner dispaly control options - showRoundCorner
+ - Change mouse cursor display on header panel by three different status: normal, minimized, maximized
+ - Fix change title text dynamically display error while window is minimized
+ 
+ Version 4.04 change log:
+ - Change all callback functions parameter to window instance instead of container
+ - Add new options attribute - showFooter, to control show footer panel
+ 
+ Version 4.03 change log:
+ - Modify header and footer border css style to make display correctly
+ - Modify window icon button css style to fix customized buttons display bug
+ 
+ Version 4.02 change log:
+ - Add functions for change window display dynamically - setTitle, setUrl, setContent, setFooterContent
+ 
+ Version 4.01 change log:
+ - Add backgroundColor value check in private hideContent function to avoid display bug in Firefox2. Thanks for crabo.
+ - Add a public function - close, instead of destroy function. It does the same routine, but have a boolean parameter to decide doing callback. 
+ - Add parameter: quiet in closeAll function, it decide doing close callback or not.
+ 
+ Version 4.00 change log:
+ - Change code to another javascript OOP style, more structural, readable, easy manageable and extending
+ - Modify maximized status css position attribute as "absolute" to fix ISU_004 issue.
+   And also disable browser(except Opera) scrollbar concurrently to avoid user have chance to change maxmized window's view position.
+   But it got side effect, see issue ISU_005, ISU_006. Even so, at least IE user can read/operate content normally while window maximized. 
+ - Support jquery ui theme now
+ - Move animationSpeed from options to global window attribute
+ - Add options new attribute: createRandomOffset, to make window have a random offset position while creating
+ - Add options new attribute: footerContent, to let put something on window footer
+ - Add options new attribute: containerClass, headerClass, frameClass, footerClass to make customize window look-like possible
+ - Add handle dblclick event on header panel, it will do maximize or restore by window status
+ - options content attribute also accept a jQuery object or html element now
+ - Customized buttons callback function parameter change from a element to a jquery object, and add an extra container parameter
+ - Modify public function name setFocus, releaseFocus to select and unselect
+ - Merge icon buttons as one image, and change bookmark icon
+ - Fix issues: ISU_001, ISU_003, ISU_004
+ - Fix serveral UI bug
+ 
+ Version 3.03 change log:
+ - Modify window icon button margin-right to "4px"
+ 
+ Version 3.02 change log:
+ - Fix serveral UI display bugs
+ 
+ Version 3.01 change log:
+ - Availalbe to create customized icon buttons with passing a element JSON Array
+ 
+ Version 3.00 change log:
+ - Add maximize feature
+ - Add adjust the width of header title text panel while window is resized. And add css style text-overflow: ellipsis; to let browser
+   auto modify title text with "..." at the end while text width exceed panel width.
+ - Add create window from a html element, and could be limit boundary within it.
+ - Add iframeRedirectCheckMsg attribute to make iframe redirect checking mechanism more simple
+ - Add custBtns attribute to implement customized icon button feature.
+ - Modify bookmark not support message for Chrome, Safari and Opera.
+ - Modify option attribute "zIndex" to simpler "z"
+ - Add option attribute "animationSpeed" to control the animation speed
+ 
+ Version 2.03 change log:
+ - Add three options attribute to control show function button(close, minimize, bookmark)
+ 
+ Version 2.02 change log:
+ - Modify css class name to avoid conflict with others
+ 
+ Version 2.01 change log:
+ - Fix checkBoundary work incorrectly bug.
+ - Add show loading animation while opening a iframe window.
+ 
+ Version 2.00 change log:
+ - Modify call function method. It doesn't need caller panel now, plugin will add a div element in html body automatically.
+ - Add minimized and restore feature.
+ 
+ Version 1.02 change log:
+ - Fix second call, return wrong value bug
+ - Add set focus feature
+ 
+ Version 1.01 change log:
+ - Change window panel css attribute: position to "fixed" to let window keep position on screen.
+ - Fix auto align center incorrectly bug</pre>
+ 		</div>
+ 		
+		<div class='readme_block'>
+			<h3>Tested Browsers</h3>
+			<ul>
+				<li>IE 7, 8</li>
+				<li>Firefox 3.5+</li>
+				<li>Chrome 2.0+</li>
+				<li>Safari 4.0+</li>
+				<li>Opera 9, 10</li>
+			</ul>
+		</div>
+		
+		<h3>Code Style</h3>
+		About the plugin javascript code style, please reference the following post.<br/>
+		<span id='code_style_link' class='virtual_link'>http://fstoke.me/blog/?page_id=1610</span>
+
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript" src="../jquery-ui.js"></script>
+		<script type="text/javascript" src="./jquery.codeview.js"></script>
+		<script type="text/javascript" src="./jquery.share.js"></script>
+		<script type="text/javascript" src="jquery.window.min.js"></script>
+				
+		<script type="text/javascript" src="./common.js"></script>
+		<script type="text/javascript" src="./index.js"></script>
+		
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-4293992-5");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+	</body>
+</html>

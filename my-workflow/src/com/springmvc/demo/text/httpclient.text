@@ -1,0 +1,30 @@
+1:添加maven依赖
+<dependency>
+	<groupId>org.apache.httpcomponents</groupId>
+	<artifactId>httpclient</artifactId>
+	<version>4.5.1</version>
+</dependency>
+<dependency>
+	<groupId>com.google.code.gson</groupId>
+	<artifactId>gson</artifactId>
+	<version>2.5</version>
+</dependency>
+
+
+需要特别说明的是Restful Web API应该严格遵守Http的四个操作：
+
+GET对应查询操作
+
+POST对应创建操作
+
+PUT对应更新操作
+
+DELETE对应删除操作
+
+不应该再有其它任何操作，也就是说从HttpClient发过来的Request类型只能
+
+是上述四种之一。否则不能称为Restful API。
+
+
+JSON对象解析在HttpClient端我用了google json解析包，比较好用
+
