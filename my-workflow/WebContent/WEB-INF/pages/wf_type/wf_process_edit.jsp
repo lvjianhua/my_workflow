@@ -97,7 +97,12 @@
 				</tr>
                  <tr>
                  <td align="right"><b><font color="0E2F72">公式：</font></b></td>
-				 <td colspan="3">><input type="text" value="123"></td>
+				 <td colspan="3">><input type="text" value="123">
+				 <select>
+				 	<option value="1">数值判断</option>
+				 	<option value="1">天数判断</option>
+				 </select>				 
+				 </td>
                  </tr>
                 <tr>
                  <td align="right"><b><font color="0E2F72">流程：</font></b></td>
@@ -132,11 +137,11 @@
         </tr>
         
         <tr>
-             <td colspan="3">1__<500--->3-待经理审核(项目组1经理)</td>
+             <td colspan="3">1__数值<500--->3-待经理审核(项目组1经理)</td>
              <td><input type="button" value="删除" onclick=""/></td>
         </tr>
         <tr>
-             <td colspan="3">1__>500--->4-待财务审核(财务行政助理,财务会计助理)</td>
+             <td colspan="3">1__数值>500--->4-待财务审核(财务行政助理,财务会计助理)</td>
              <td><input type="button" value="删除" onclick=""/></td>
         </tr>
 </table>

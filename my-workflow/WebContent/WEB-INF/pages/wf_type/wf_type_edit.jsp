@@ -57,7 +57,7 @@
 		<option value="0" >请选择</option>
 				<option value="0" >计算XXXX金额</option>
 				<option value="1">发邮件</option>
-				</select></td>
+				</select>注：后台自定义方法</td>
 						</tr>
 		<tr>
 			
@@ -114,6 +114,14 @@
              <td>2</td>
              <td>待经理审核</td>
              <td>公共角色</td>
+             <td>是</td>
+             <td>是</td>
+             <td><input type="button" value="编辑" onclick=""/>&nbsp;<input type="button" value="删除" onclick=""/></td>
+        </tr>
+        <tr>
+             <td>3</td>
+             <td>待财务助理审核</td>
+             <td>系统角色</td>
              <td>是</td>
              <td>是</td>
              <td><input type="button" value="编辑" onclick=""/>&nbsp;<input type="button" value="删除" onclick=""/></td>
